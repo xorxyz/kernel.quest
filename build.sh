@@ -4,10 +4,9 @@ mkdir -p public
 cp style.css public/style.css
 cp script.js public/script.js
 
-assets="favicon.ico"
-
-for a in $assets; do
-  cp "assets/$a" "public/$a"
+for src in assets/*; do
+  dest=$(echo "$src" | sed "s/assets/public/")
+  cp "$src" "$dest"
 done
 
 pages="index start blog"
