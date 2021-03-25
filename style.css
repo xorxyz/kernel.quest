@@ -7,7 +7,6 @@ body {
 
 main {
   min-height: 80vh;
-  margin-bottom: 2rem;
 }
 
 main.game {
@@ -23,7 +22,7 @@ header a:visited {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 7.5rem;
   font-size: 0.75rem;
 }
 
@@ -54,13 +53,11 @@ footer {
   content: ', '
 }
 
-input.prompt {
-  padding: 0.5ex 0ex 0.5ex 2ex;
+#prompt {
   font-size: 1em; 
   font-family: monospace;
-  border: 2px solid black;
 }
 
-input.prompt:before {
+#prompt:before {
   content: '$ ';
 }

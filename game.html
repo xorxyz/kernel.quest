@@ -3,80 +3,101 @@
 <section class="w-100">
 <h2>challenge #1</h2>
 
-<pre>
-  0 1 2 3 4 5 6 7 8 9 A B C D E F
-8👼..📜..........................
-9......📜........................
-0..........████████████..........
-1......🐑..██░░░░░░░░██........🗝️
-2..........██💰....📜██..........
-3..........██........██..........
-4..........██████..████..🐑......
-5..........░░░░🔒🚪░░░░..........
-6................................
-7................................
+<pre class="hidden">
+  ┌───────────────────────────────────────┐
+  │ xor/https (kernel.quest:443) (tty0)   │
+  │ login: guest                          │
+  │ password:                             │
+  │ Last update: {{ LAST_UPDATE }}        |
+  │                                       │
+  │ You are in a room.                    │
+  │                                       │
+  └───────────────────────────────────────┘
 </pre>
 
 <pre>
-┌───────────────────────────────────────┐
-│ xor/https (kernel.quest:443) (tty0)   │
-│ login: guest                          │
-│ password:                             │
-│ Last update: {{ LAST_UPDATE }}        |
-│ Welcome.                              │
-│                                       │
-└───────────────────────────────────────┘
+xor/https (kernel.quest:443) (tty0)   
+login: guest                          
+password:                             
+Last update: {{ LAST_UPDATE }}        
+
+You are in a room.
 </pre>
 
-<div class="monospace">
-  <input type="text" class="prompt" size="38" maxlength="38" placeholder=""/>
+<code>
+  0 1 2 3 4 5 6 7 8 9 A B C D E F<br>
+0👼..📜..........................<br>
+1......📜........................<br>
+2..........████████████..........<br>
+3......<a href="sheep.html">🐑</a>..██░░░░░░░░██........🗝️<br>
+4..........██<a href="gp.html">💰</a>....📜██..........<br>
+5..........██........██..........<br>
+6..........██████..████..🐑......<br>
+7..........░░░░🔒🚪░░░░..........<br>
+8................................<br>
+9................................<br>
+</code>
+
+<div class="monospace mv2">
+  <input id="prompt" type="text" size="38" maxlength="38" placeholder=""/>
+  <script type="module">
+    const el = document.getElementById('prompt');
+
+    el.on('submit', e => {
+
+    });
+  </script>
 </div>
 </section>
 
-<hr class="mv2">
-
-<section>
+<section class="monospace">
 <details open>
   <summary>principals</summary>
   <ul>
-    <li>👼: you</li>
-    <li>🐑: 2 sheeps</li>
-    <li>🗝️: a key</li>
-    <li>👤: ???</li>
+    <li>👼 you</li>
+    <li>🐑 <a href="sheep.html">2 sheeps</a></li>
+    <li>🗝️ a key</li>
+    <li>👤 ???</li>
   </ul>
 </details>
 
 <details open>
   <summary>assets</summary>
   <ul>
-    <li>🔒🚪: a locked door</li>
-    <li>📜: 3 scrolls</li>
-    <li>💰: some gold</li>
+    <li>🔒🚪 a locked door</li>
+    <li>📜 3 scrolls</li>
+    <li>💰 <a href="gp.html">some gold</a></li>
   </ul>
 </details>
 
 <details open>
   <summary>spells</summary>
   <ul>
-    <li><code>x y walk</code></li>
-    <li><code>x y ref -> ref</code></li>
+    <li><code>x y point -> ref</code></li>
     <li><code>ref whereis -> x y</code></li>
+    <li><code>ref look -> desc</code></li>
+    <li><code>x y walk</code></li>
+    <li><code>ref take</code></li>
   </ul>
 </details>
 
 <details class="hidden">
-<pre>
-walk:
-walk to a set of x y coordinate.
-1 turn, 1 sp (per traversed cell)
+<code id="grammar">
 
-ref:
+</code>
+
+<pre>
+point:
 push a reference to what's at a set of x y coordinate
 1 turn, 1 sp
 
 whereis:
 get a set of x y coordinate from a reference
 1 turn, 1 sp
+
+walk:
+walk to a set of x y coordinate.
+1 turn, 1 sp (per traversed cell)
 </pre>
 </details>
 
