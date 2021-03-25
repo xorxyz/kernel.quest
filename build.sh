@@ -3,11 +3,10 @@
 mkdir -p public
 cp style.css public/style.css
 
-# index is a special case
-cat head.html "index.html" foot.html > "public/index.html"
+files="index start blog"
 
-files="start"
-
-for f in $files; do 
-  cat head.html "$f.html" foot.html > "public/$f.html"
+for f in $files; do
+  title="Kernel Quest > $f"
+  head=$(cat head.html)
+  echo "$head" | cat - nav.html "$f.html" foot.html > "public/$f.html"
 done
