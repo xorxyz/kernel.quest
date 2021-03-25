@@ -7,6 +7,7 @@ body {
 
 main {
   min-height: 80vh;
+  margin-bottom: 2rem;
 }
 
 main.game {
@@ -22,7 +23,7 @@ header a:visited {
 }
 
 footer {
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 0.75rem;
 }
 
@@ -46,18 +47,20 @@ footer {
 .list {
   padding-left: 0;
 }
-
 .list li {
   display: inline;
 }
-
 .list li:not(:first-child):before {
-  content: ' | '
+  content: ', '
 }
 
 input.prompt {
-  padding: 0.5ex; 
+  padding: 0.5ex 0ex 0.5ex 2ex;
   font-size: 1em; 
   font-family: monospace;
-  border: 1px solid black;
+  border: 2px solid black;
+}
+
+input.prompt:before {
+  content: '$ ';
 }

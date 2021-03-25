@@ -1,9 +1,7 @@
-<main class="game">
+<main>
 
-<section class="w-100 tc">
-<pre class="dib">
-  challenge #1
-</pre>
+<section class="w-100">
+<h2>challenge #1</h2>
 
 <pre>
   0 1 2 3 4 5 6 7 8 9 A B C D E F
@@ -18,39 +16,55 @@
 6................................
 7................................
 </pre>
+<pre>
+┌───────────────────────────────────────┐
+│ xor/https (kernel.quest:443) (tty0)   │
+│ login: guest                          │
+│ password:                             │
+│ Last update: {{ LAST_UPDATE }}        |
+│ Welcome.                              │
+│                                       │
+└───────────────────────────────────────┘
+</pre>
 
-<p class="hidden mv2">
-  <span class="dib">me~#</span>
-  <input type="text" class="prompt dib" 
-    size="45" 
-    maxlength="45" 
-    placeholder=""/>
-</p>
+<div class="monospace">
+  <input type="text" class="prompt" size="38" maxlength="38" placeholder=""/>
+</div>
 </section>
 
-<section class="pa05">
+<hr class="mv2">
+
+<section>
+<details open>
+  <summary>principals</summary>
+  <ul>
+    <li>👼: you</li>
+    <li>🐑: 2 sheeps</li>
+    <li>🗝️: a key</li>
+    <li>👤: ???</li>
+  </ul>
+</details>
+
+<details open>
+  <summary>assets</summary>
+  <ul>
+    <li>🔒🚪: a locked door</li>
+    <li>📜: 3 scrolls</li>
+    <li>💰: some gold</li>
+  </ul>
+</details>
+
+<details open>
+  <summary>spells</summary>
+  <ul>
+    <li><code>x y walk</code></li>
+    <li><code>x y ref -> ref</code></li>
+    <li><code>ref whereis -> x y</code></li>
+  </ul>
+</details>
+
+<details class="hidden">
 <pre>
-principals:
----
-👼: you
-👤: ?
-🐑: sheeps
-🗝️: a key
-
-
-assets:
----
-🔒🚪: a locked door
-📜: scrolls
-💰: some gold
-
-
-spells:
----
-1: x y walk
-2: x y ref -> ref
-3: ref whereis -> x y
-
 walk:
 walk to a set of x y coordinate.
 1 turn, 1 sp (per traversed cell)
@@ -62,8 +76,9 @@ push a reference to what's at a set of x y coordinate
 whereis:
 get a set of x y coordinate from a reference
 1 turn, 1 sp
-
 </pre>
+</details>
+
 </section>
 
 </main>

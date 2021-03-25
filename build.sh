@@ -1,13 +1,7 @@
 #!/bin/sh
 
-mkdir -p public
-cp style.css public/style.css
-cp script.js public/script.js
-
-for src in assets/*; do
-  dest=$(echo "$src" | sed "s/assets/public/")
-  cp "$src" "$dest"
-done
+cp -r assets public
+cp style.css script.js public
 
 pages="index game blog logs"
 today=$(date "+%Y-%m-%d%n")
