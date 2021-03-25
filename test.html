@@ -1,0 +1,49 @@
+<main>
+<pre>
+  0 1 2 3 4 5 6 7 8 9 A B C D E F
+8👼..............................
+9................................
+0..........████████████..........
+1......🐑..██░░░░░░░░██......[🗝️]
+2..........██💰....📜██..........
+3..........██........██..........
+4..........██████..████..🐑......
+5..........░░░░🔒🚪░░░░..........
+6................................
+7................................
+</pre>
+
+
+<ol style="font-size: 0.25rem;">
+  <li>empty</li>
+</ol>
+
+<input type="text" size="45" maxlength="45" style="margin-left: 1ex; padding: 0.5ex; font-size: 1em; font-family: monospace;" />
+
+<pre>
+agents:
+👼: you
+🐑: sheeps
+🔒🚪: a locked door
+
+items:
+[🗝️]: a key
+💰: some gold
+📜: a scroll
+
+spells:
+walk == x y -> 
+walk to a set of x y coordinate.
+1 turn, 1 sp (per traversed cell)
+
+ref == x y -> ref
+push a reference to what's at a set of x y coordinate 
+1 turn, 1 sp
+
+whereis == ref -> x y
+get a set of x y coordinate from a reference
+1 turn, 1 sp
+
+</pre>
+
+</main>

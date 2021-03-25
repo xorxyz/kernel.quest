@@ -1,5 +1,10 @@
 #!/bin/sh
 
-mkdir -p public && \
-cat head.html body.html foot.html > public/index.html && \
+files="index test"
+
+mkdir -p public
 cp style.css public/style.css
+
+for f in $files; do 
+  cat head.html "$f.html" foot.html > "public/$f.html"
+done

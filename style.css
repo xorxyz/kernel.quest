@@ -5,6 +5,7 @@ body {
 
 main {
   width: 65ex;
+  min-height: 80vh;
   border: 1px solid black;
   padding: 1rem;
 }
@@ -16,4 +17,8 @@ footer {
 
 .dib {
   display: inline-block;
+}
+
+.tc {
+  text-align: center;
 }
