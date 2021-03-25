@@ -1,8 +1,10 @@
 <main>
+
+<div class="w-100 tc">
 <pre>
   0 1 2 3 4 5 6 7 8 9 A B C D E F
-8👼..............................
-9................................
+8👼..📜..........................
+9......📜........................
 0..........████████████..........
 1......🐑..██░░░░░░░░██......[🗝️]
 2..........██💰....📜██..........
@@ -13,37 +15,52 @@
 7................................
 </pre>
 
+<p style="margin: 2rem 0">
+  <span class="dib">me~#</span>
+  <input autofocus type="text" class="prompt dib" 
+    size="45" 
+    maxlength="45" 
+    placeholder=""/>
+</p>
 
-<ol style="font-size: 0.25rem;">
-  <li>empty</li>
-</ol>
+</div>
 
-<input type="text" size="45" maxlength="45" style="margin-left: 1ex; padding: 0.5ex; font-size: 1em; font-family: monospace;" />
-
-<pre>
-agents:
+<div class="instructions">
+<pre class="terminal">
+principals:
+---
 👼: you
 🐑: sheeps
 🔒🚪: a locked door
-
-items:
 [🗝️]: a key
+
+
+assets:
+---
+📜: scrolls
 💰: some gold
-📜: a scroll
+
 
 spells:
-walk == x y -> 
+---
+1: x y walk
+2: x y ref -> ref
+3: ref whereis -> x y
+
+
+walk:
 walk to a set of x y coordinate.
 1 turn, 1 sp (per traversed cell)
 
-ref == x y -> ref
+ref:
 push a reference to what's at a set of x y coordinate 
 1 turn, 1 sp
 
-whereis == ref -> x y
+whereis:
 get a set of x y coordinate from a reference
 1 turn, 1 sp
 
 </pre>
+</div>
 
 </main>
