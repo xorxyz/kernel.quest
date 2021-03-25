@@ -6,7 +6,6 @@ cp style.css public/style.css
 files="index start blog"
 
 for f in $files; do
-  title="Kernel Quest > $f"
-  head=$(cat head.html)
+  head=$(sed "s/{{ PAGE_TITLE }}/$f/" head.html)
   echo "$head" | cat - nav.html "$f.html" foot.html > "public/$f.html"
 done
