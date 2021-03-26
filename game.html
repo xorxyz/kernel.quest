@@ -1,7 +1,5 @@
 <main>
-<script src="game.js"></script>
 
-<section class="w-100">
 <h2>challenge #1: gp and sheep</h2>
 
 <pre>
@@ -10,35 +8,49 @@ login: guest
 password:                             
 Last update: {{ LAST_UPDATE }}        
 
+> look
+
 You are in a room.
 </pre>
 
-<code>
-&nbsp;&nbsp;0 1 2 3 4 5 6 7 8 9 A B C D E F<br>
-0👼............................<br>
-1..📜............................<br>
-2..........████████████..........<br>
-3..........██░░░░░░░░██........🗝️<br>
-4..........██....📜💰██..........<br>
-5..........██........██..........<br>
-6..........██████..████..🐑......<br>
-7..🌿🌿....░░░░🔒🚪░░░░....🐑....<br>
-8..🌿🌿..........................<br>
-9................................<br>
-</code>
+<details>
+  <summary class="blue">room</summary>
 
-<div class="monospace mv2">
-  <input id="prompt" type="text" size="38" maxlength="38" placeholder=""/>
-</div>
+  <pre><code>
+  [ room ] 
+  stdlib from use.
 
-<div class="monospace mv2">
-  <audio controls id="player" src="dungeon.wav" preload="none"></audio>
-</div>
+  [ 6 6 bound 8 7 door ] "house" name.
+  house lock "key" name.
 
-</section>
+  house [
+    [3 2 [[location] scroll]]
+    [4 2 [10 gold]]
+  ] [exec put] map.
 
-<section class="monospace">
-<details open>
+  room [
+    [0 0 you]
+    [5 2 house]
+    [1 1 [[walk] scroll]]
+    [1 7 [1 [herbs] spawn]]
+    [1 8 [1 [herbs] spawn]]
+    [2 7 [1 [herbs] spawn]]
+    [2 8 [1 [herbs] spawn]]
+    [12 6 sheep]
+    [13 7 sheep]
+    [16 3 key]
+  ] [exec put] map.
+
+  "You are in a room." room describe.
+
+  </code></pre>
+</details>
+
+<pre>
+> ls
+</pre>
+
+<details>
   <summary>principals</summary>
   <ul>
     <li>👼 you</li>
@@ -48,7 +60,7 @@ You are in a room.
   </ul>
 </details>
 
-<details open>
+<details>
   <summary>assets</summary>
   <ul>
     <li>🔒🚪 a locked door</li>
@@ -58,37 +70,65 @@ You are in a room.
   </ul>
 </details>
 
-<details open>
+<details>
+  <summary>boundaries</summary>
+  <ul>
+    <li>██, ░░ walls</li>
+  </ul>
+</details>
+
+<details>
   <summary>spells</summary>
   <ul>
+    <li><code>ref look -> details</code></li> 
     <li><code>[x y] point -> ref</code></li>
-    <li><code>ref whereis -> [x y]</code></li>
-    <li><code>ref look -> desc</code></li>
-    <li><code>[x y] walk</code></li>
     <li><code>ref take</code></li>
   </ul>
 </details>
 
-<details class="hidden">
-<code id="grammar">
+<pre>
+> 16 10 room draw
+</pre>
 
-</code>
+<pre id="room">
+  0 1 2 3 4 5 6 7 8 9 A B C D E F
+0👼  ..  ..  ..  ................
+1  📜  ..  ..  ..  ..............
+2..........████████████..........
+3..........██░░░░░░░░██........🗝️
+4..........██....📜💰██..........
+5..........██........██..........
+6..........██████..████..🐑......
+7..🌿🌿....░░░░🔒🚪░░░░....🐑....
+8..🌿🌿..........................
+9................................
+</pre>
 
 <pre>
+> music
+</pre>
+
+<audio controls id="player" src="dungeon.wav" preload="none"></audio>
+</article>
+
+<div class="monospace mv2">
+  <span>&gt;</span>
+  <input id="prompt" type="text" size="38" maxlength="38" placeholder=""/>
+</div>
+
+<!--
 point:
 push a reference to what's at a set of x y coordinate
 1 turn, 1 sp
 
-whereis:
+location:
 get a set of x y coordinate from a reference
 1 turn, 1 sp
 
 walk:
 walk to a set of x y coordinate.
 1 turn, 1 sp (per traversed cell)
-</pre>
-</details>
+-->
 
-</section>
-
+<script src="game.js"></script>
 </main>
