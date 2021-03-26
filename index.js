@@ -1,43 +1,43 @@
 const swap = ([a, b]) => [b, a];
-const LOOP_SECONDS = 0.1;
-const LOOP_MS = LOOP_SECONDS * 1000;
+const LOOP_MS = 100;
+const LOOP_SECONDS = LOOP_MS / 1000;
 
 let snail = ['🐌__', '__🐌'];
 let sheep = ['🌿🐑', '🐑🌿'];
 let grass = ['`', `'`];
-let seconds = 0;
+let ms = 0;
 let timer = 0;
 
-document.addEventListener('DOMContentLoaded', e => {
-  const room = document.getElementById('room');
-  const player = document.getElementById('player');
-  const draw = (pair) => {
-    room.innerText = room.innerText.replace(new RegExp(pair[0], 'g'), pair[1]);
-    return pair;
+const room = document.getElementById('room');
+const player = document.getElementById('player');
+const draw = pair => {
+  room.innerText = room.innerText.replace(new RegExp(pair[0], 'g'), pair[1]);
+  return pair;
+}
+
+const cycle = () => {
+  ms += LOOP_MS;
+
+  if (ms % 400 === 0) {
+    grass = swap(grass);
+    draw(grass);
   }
 
-  const cycle = () => {
-    seconds += LOOP_SECONDS;
+  if (ms % 800 === 0) {
+    sheep = swap(sheep);
+    draw(sheep);
 
-    if (seconds % 0.4 === 0) {
-      grass = swap(grass);
-      draw(grass);
-    }
-
-    if (seconds % 0.8 === 0) {
-      sheep = swap(sheep);
-      draw(sheep);
-
-      snail = swap(snail);
-      draw(snail);
-    }
+    snail = swap(snail);
+    draw(snail);
   }
+}
 
-  player.addEventListener('play', () => {
-    timer = setInterval(cycle, LOOP_MS);
-  });
-
-  player.addEventListener('pause', () => {
-    clearInterval(timer);
-  });
+player.addEventListener('play', () => {
+  console.log('play')
+  timer = setInterval(cycle, LOOP_MS);
 });
+
+player.addEventListener('pause', () => {
+  clearInterval(timer);
+});
+
