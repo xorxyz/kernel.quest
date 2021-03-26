@@ -20,8 +20,8 @@ You are in a room.
   [ room ] 
   stdlib from use.
 
-  [ 6 6 bound 8 7 door ] "house" name.
-  house lock "key" name.
+  "house" [ 6 6 bound 8 7 door ] name.
+  "key" house lock name.
 
   house [
     [3 2 [[location] scroll]]
@@ -80,9 +80,9 @@ You are in a room.
 <details>
   <summary>spells</summary>
   <ul>
-    <li><code>ref look -> details</code></li> 
-    <li><code>[x y] point -> ref</code></li>
-    <li><code>ref take</code></li>
+    <li><pre><code>ref look  -> details</code></pre></li> 
+    <li><pre><code>x y point -> ref</code></pre></li>
+    <li><pre><code>ref take  -> item</code></pre></li>
   </ul>
 </details>
 
@@ -92,8 +92,8 @@ You are in a room.
 
 <pre id="room">
   0 1 2 3 4 5 6 7 8 9 A B C D E F
-0👼  ..  ..  ..  ................
-1  📜  ..  ..  ..  ..............
+0👼..............................
+1..📜............................
 2..........████████████..........
 3..........██░░░░░░░░██........🗝️
 4..........██....📜💰██..........
