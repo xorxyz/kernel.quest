@@ -40,11 +40,6 @@ footer {
   line-height: 1rem;
 }
 
-#prompt {
-  font-size: 1em; 
-  font-family: monospace;
-}
-
 .list { padding-left: 0; }
 .list li { display: inline; }
 .list li:not(:first-child):before {
