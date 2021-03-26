@@ -48,6 +48,14 @@ You are in a room.
     });
   </script>
 </div>
+
+<div class="monospace mv2">
+  <audio controls id="player" src="dungeon.wav">
+    Your browser does not support the
+    <code>audio</code> element.
+  </audio>
+</div>
+
 </section>
 
 <section class="monospace">
@@ -73,10 +81,10 @@ You are in a room.
 <details open>
   <summary>spells</summary>
   <ul>
-    <li><code>x y point -> ref</code></li>
-    <li><code>ref whereis -> x y</code></li>
+    <li><code>[x y] point -> ref</code></li>
+    <li><code>ref whereis -> [x y]</code></li>
     <li><code>ref look -> desc</code></li>
-    <li><code>x y walk</code></li>
+    <li><code>[x y] walk</code></li>
     <li><code>ref take</code></li>
   </ul>
 </details>

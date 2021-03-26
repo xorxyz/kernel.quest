@@ -1,0 +1,7 @@
+verbs
+
+- point
+- whereis
+- look 
+- walk
+- take
