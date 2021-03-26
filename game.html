@@ -1,19 +1,8 @@
 <main>
+<script src="game.js"></script>
 
 <section class="w-100">
 <h2>challenge #1: gp and sheep</h2>
-
-<pre class="hidden">
-  ┌───────────────────────────────────────┐
-  │ xor/https (kernel.quest:443) (tty0)   │
-  │ login: guest                          │
-  │ password:                             │
-  │ Last update: {{ LAST_UPDATE }}        |
-  │                                       │
-  │ You are in a room.                    │
-  │                                       │
-  └───────────────────────────────────────┘
-</pre>
 
 <pre>
 xor/https (kernel.quest:443) (tty0)   
@@ -26,34 +15,24 @@ You are in a room.
 
 <code>
 &nbsp;&nbsp;0 1 2 3 4 5 6 7 8 9 A B C D E F<br>
-0👼..📜..........................<br>
-1......📜........................<br>
+0👼............................<br>
+1..📜............................<br>
 2..........████████████..........<br>
-3......<a href="sheep.html">🐑</a>..██░░░░░░░░██........🗝️<br>
-4..........██<a href="gp.html">💰</a>....📜██..........<br>
+3..........██░░░░░░░░██........🗝️<br>
+4..........██....📜💰██..........<br>
 5..........██........██..........<br>
 6..........██████..████..🐑......<br>
-7..........░░░░🔒🚪░░░░..........<br>
-8................................<br>
+7..🌿🌿....░░░░🔒🚪░░░░....🐑....<br>
+8..🌿🌿..........................<br>
 9................................<br>
 </code>
 
 <div class="monospace mv2">
   <input id="prompt" type="text" size="38" maxlength="38" placeholder=""/>
-  <script type="module">
-    const el = document.getElementById('prompt');
-
-    el.on('submit', e => {
-
-    });
-  </script>
 </div>
 
 <div class="monospace mv2">
-  <audio controls id="player" src="dungeon.wav" preload="none">
-    Your browser does not support the
-    <code>audio</code> element.
-  </audio>
+  <audio controls id="player" src="dungeon.wav" preload="none"></audio>
 </div>
 
 </section>
@@ -73,7 +52,8 @@ You are in a room.
   <summary>assets</summary>
   <ul>
     <li>🔒🚪 a locked door</li>
-    <li>📜 3 scrolls</li>
+    <li>📜 2 scrolls</li>
+    <li>🌿 <a href="herbs.html">4 herbs</a></li>
     <li>💰 <a href="gp.html">some gold</a></li>
   </ul>
 </details>
