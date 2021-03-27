@@ -33,7 +33,6 @@ const cycle = () => {
 }
 
 player.addEventListener('play', () => {
-  console.log('play')
   timer = setInterval(cycle, LOOP_MS);
 });
 

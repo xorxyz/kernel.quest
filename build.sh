@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p public       && \
-cp -r assets/ public/ && \
+cp -r assets public/ && \
 cp -r js/*    public/
 
 head="components/head.html"
