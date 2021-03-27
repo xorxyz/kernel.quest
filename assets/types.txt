@@ -2,4 +2,4 @@ types
 
 - ref 
 - desc
-- [x y]
+- x y
