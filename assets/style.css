@@ -30,6 +30,11 @@ summary {
   color: blue;
 }
 
+textarea {
+  width: 35ex;
+  height: 25em;
+}
+
 footer {
   margin-top: 7.5rem;
   font-size: 0.75rem;
