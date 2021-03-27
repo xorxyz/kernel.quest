@@ -20,7 +20,7 @@ set_var() (
 pages="game blog wiki edit logs gp sheep herbs"
 today=$(date "+%Y-%m-%d%n")
 
-print_page "" "pages/index.html" > "public/index.html"
+print_page " " "pages/index.html" > "public/index.html"
 
 for p in $pages; do
   print_page "$p" "pages/$p.html" \
