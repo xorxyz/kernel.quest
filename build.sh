@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/sh
 
 cp -r assets/ public/ && \
 cp -r js/*    public/
