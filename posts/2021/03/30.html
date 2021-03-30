@@ -1,0 +1,59 @@
+<article>
+
+<h1>designing a proof of concept level</h1>
+
+<blockquote> a puzzle a day keeps the doctor away</blockquote>
+
+here is what we will be working with:
+<img src="images/2021-03-30_1.jpeg">
+
+first, i made a room outline that looks like this:
+<pre>
+##################
+##👼..:4==??..01##
+##....:2==??..01##
+##....:1==??..01##
+##..............##
+##🔒🚪############
+##......##🐑🐑🐑##
+##..💎..##🐑🐑🐑##
+##......##🐑🐑🐑##
+##################
+</pre>
+
+the following types are used:
+<ul>
+  <li><code>👼</code>: you. using walk moves you around.</li>
+  <li><code>🐑</code>: sheep. you can count them to fall asleep.</li>
+  <li><code>🔒🚪</code>: locked door. unlock by entering the right passcode.</li>
+  <li><code>💎</code>: gem. reach this to beat the level.</li>
+  <li><code>..</code>: floors. this is where you can walk on.</li>
+  <li><code>, </code>: comma. links two items together.</li>
+  <li><code>##</code>: walls. blocks your movement.</li>
+  <li><code>:N</code>: registers. .</li>
+  <li><code>??</code>: slots. takes a single digit hex value.</li>
+  <li><code>01</code>: number. a 2 digit hex value. (00-FF)</li>
+</ul>
+
+i added a door and a gem to make the objective visual and clear.
+the goal is to unlock the door and reach the gem. to unlock the door, you need to fill the register with right values ("to enter the passcode").
+
+you can do the tasks by hand (by editing the lines), or you can use the runtime language to transform the room until it's in a solved state. the later is the intended way, but both technically work.
+
+<details>
+<summary>the solved room would look like this (spoiler)</summary>
+<pre>
+##################
+##....:4==02....##
+##....:2==??....##
+##....:1==01....##
+##..............##
+##....############
+##......##🐑🐑🐑##
+##..👼..##🐑🐑🐑##
+##......##🐑🐑🐑##
+##################
+</pre>
+</details>
+
+</article>

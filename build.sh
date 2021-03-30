@@ -1,7 +1,8 @@
 #!/bin/sh
 
 today=$(date "+%Y-%m-%d%n")
-pages=$(find pages/* | sed 's/pages\///g;s/.html//' | grep -v index)
+pages=$(find pages -type f | sed 's/pages\///g;s/.html//' | grep -v index)
+posts=$(find posts -type f)
 
 print_page() (
   dir="components"
@@ -15,6 +16,12 @@ cp -r js/*    public/
 
 for p in $pages; do
   print_page "| $p | " "pages/$p.html" > "public/$p.html"
+done
+
+for p in $posts; do
+  dest=$(echo "$p" | sed 's/posts/public/')
+  mkdir -p "$(dirname "$dest")" && \
+  print_page "|" "$p" > "$dest"
 done
 
 print_page "|" "pages/index.html" > "public/index.html"
