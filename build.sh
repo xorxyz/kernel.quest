@@ -14,14 +14,13 @@ print_page() (
 cp -r assets/ public/ && \
 cp -r js/*    public/
 
-for p in $pages; do
-  print_page "| $p | " "pages/$p.html" > "public/$p.html"
+for name in $pages; do
+  print_page "| $name | " "pages/$name.html" > "public/$name.html"
 done
 
-for p in $posts; do
-  dest=$(echo "$p" | sed 's/posts/public/')
-  mkdir -p "$(dirname "$dest")" && \
-  print_page "|" "$p" > "$dest"
+for filepath in $posts; do
+  dest=$(echo "$filepath" | sed -e 's/posts\///' -e 's/\//-/g')
+  print_page "|" "$filepath" > "public/$dest"
 done
 
 print_page "|" "pages/index.html" > "public/index.html"
