@@ -19,8 +19,8 @@ for name in $pages; do
 done
 
 for filepath in $posts; do
-  dest=$(echo "$filepath" | sed -e 's/posts\///' -e 's/\//-/g')
-  print_page "|" "$filepath" > "public/$dest"
+  filename=$(basename "$filepath")
+  print_page "|" "$filepath" > "public/$filename"
 done
 
 print_page "|" "pages/index.html" > "public/index.html"
