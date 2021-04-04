@@ -7,7 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Kernel Quest is a small online game that helps you learn about information security from first principles.">
   <meta http-equiv="Content-Security-Policy" 
-    content="default-src 'self'; img-src 'self'; child-src 'none';">
+    content="
+    default-src 'self'; 
+    img-src 'self'; 
+    script-src 'self' 'unsafe-eval'; 
+    child-src 'none';">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 </head>
 <body>
