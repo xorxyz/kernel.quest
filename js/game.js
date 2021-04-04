@@ -1,24 +1,38 @@
 import Interpreter from './interpreter.js';
+const prompt = '> '
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('game.js: DOMContentLoaded');
-  const el = document.getElementById('prompt');
+  const outputEl = document.getElementById('output');
+  const inputEl = document.getElementById('prompt');
+
+  if (!outputEl || !inputEl) {
+    throw new Error('couldn\'t find required elements')
+  };
+
   const sh = new Interpreter();
 
-  if (!el) return;
-
-  el.addEventListener('change', e => {
+  inputEl.addEventListener('change', (e) => {
     e.preventDefault();
-    
-    console.log(e.target.value)
+    const queryEl = document.createElement('pre');
+    const resultEl = document.createElement('pre');
+
+    queryEl.innerText = prompt + e.target.value
+
+    outputEl.appendChild(queryEl)
+
+    let result;
 
     try {
-      const result = sh.exec(e.target.value);
-      console.log(result)
+      result = sh.exec(e.target.value);
     } catch (err) {
-      console.error(err)
+      result = err.message
     }
 
-    e.target.value = ''
+    resultEl.innerText = result
+
+    outputEl.appendChild(resultEl)
+
+    e.target.value = '';
   });
 })

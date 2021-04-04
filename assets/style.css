@@ -43,6 +43,10 @@ summary {
   color: blue;
 }
 
+summary ~ * {
+  margin-top: 1ex;
+}
+
 textarea {
   width: 35ex;
   height: 25em;
@@ -62,6 +66,11 @@ footer {
 .list li { display: inline; }
 .list li:not(:first-child):before {
   content: ', '
+}
+
+.bulletless {
+  list-style: none;
+  padding-left: 4ex;
 }
 
 .blue { color: blue; }
