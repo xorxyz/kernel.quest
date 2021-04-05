@@ -2,7 +2,7 @@ import Interpreter from './interpreter.js';
 const prompt = '> '
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('game.js: DOMContentLoaded');
+  console.debug('game.js: DOMContentLoaded');
   const outputEl = document.getElementById('output');
   const inputEl = document.getElementById('prompt');
 
@@ -17,22 +17,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const queryEl = document.createElement('pre');
     const resultEl = document.createElement('pre');
 
-    queryEl.innerText = prompt + e.target.value
-
-    outputEl.appendChild(queryEl)
-
     let result;
 
     try {
       result = sh.exec(e.target.value);
     } catch (err) {
-      result = err.message
+      console.error(err);
+      result = (err.message || '');
     }
 
-    resultEl.innerText = result
-
-    outputEl.appendChild(resultEl)
-
+    queryEl.innerText = prompt + e.target.value
+    resultEl.innerText = result;
     e.target.value = '';
+
+    outputEl.appendChild(queryEl)
+    outputEl.appendChild(resultEl);
   });
 })
